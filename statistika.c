@@ -148,7 +148,7 @@ int getDslams(MYSQL * conn)
     MYSQL_RES *result;
     MYSQL_ROW row;
     struct host *dslam;
-    mysql_query(conn, "select name, ip, dslam_id, dslam_type_id from dslami where dslam_type_id in (2,3,4,5)");
+    mysql_query(conn, "select name, ip, dslam_id, dslam_type_id from dslams where dslam_type_id in (2,3,4,5)");
     result = mysql_store_result(conn);
     while((row = mysql_fetch_row(result))) {
 	if(strlen(row[1]) >= 7) {
